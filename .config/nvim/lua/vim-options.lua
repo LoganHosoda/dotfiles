@@ -4,6 +4,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.cmd("set timeoutlen=50")
+vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
 vim.g.background = "light"
 
