@@ -1,0 +1,1 @@
+This is my personal collections of dotfiles uses to heavily customize my i3/neovim configuration for Arch Linux!
