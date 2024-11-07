@@ -17,6 +17,9 @@ vim.keymap.set("n", "<leader>svwm", function()
     require("vim-with-me").StopVimWithMe()
 end)
 
+-- open current file in chrome
+-- vim.keymap.set("n", "<C-g>", ":silent !google-chrome-stable %")
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
