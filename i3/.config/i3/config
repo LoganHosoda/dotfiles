@@ -12,6 +12,10 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Flameshot screenshot binds
+bindsym Print exec flameshot full
+bindsym Shift+Print exec flameshot gui
+
 exec --no-startup-id picom -b
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
