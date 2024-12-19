@@ -19,6 +19,8 @@ alias gitu='git commit -m "Update $(date +%F)"'
 alias gitm='git add -u && git commit -m "Update $(date +%F)" && git push'
 # Use gitq to add, update, and push ALL files, including new files
 alias gitq='git add . && git commit -m "Update $(date +%F)" && git push'
+# Run Git Backdate script
+alias gitb="~/.local/bin/gitb"
 
 # Obsidian mappings
 alias vo='cd ~/vaults'

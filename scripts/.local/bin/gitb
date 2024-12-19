@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "===== GIT BACKDATE SCRIPT ====="
+echo "Make sure you've staged any files you want to backdate before running this script."
+echo
+read -n 1 -p "Have you staged your file for commit already? (Y/n): " answer
+
+case ${answer:0:1} in
+y | Y | "")
+  echo
+  ;;
+*)
+  exit
+  ;;
+esac
+
+read -p "Enter a date to backdate to (YYYY-MM-DD format): " date
+read -p "Enter a commit message: " message
+
+git commit --date"'${date}'" -m "'${message}'"
+git rebase --committer-date-is-author-date
+git push
