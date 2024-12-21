@@ -14,6 +14,8 @@ fi
 
 git add "$selected"
 
+git status
+
 read -p "Enter a date for you commit (YYYY-MM-DD format): " date
 read -p "Enter a commit message: " message
 
