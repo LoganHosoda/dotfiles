@@ -21,7 +21,7 @@ exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always feh --bg-scale ~/dotfiles/backgrounds/orange-single-one-colour-solid-color-plain-5120x2880-c-f9b8a1-f-24.png
 
-exec xrandr --output DP-2 --mode 1920x1080 --rate 144 --output DP-0 --mode 1920x1080 --rate 144
+exec xrandr --output DP-2 --mode 1920x1080 --rate 144 --output DP-0 --mode 1920x1080 --rate 280 --output HDMI-1 --mode 1920x1080 --rate 144
 
 # Disalbe mouse-acceleration
 # xinput set-prop 10 "libinput Accel Profile Enabled" 0 1 0
