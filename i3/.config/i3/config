@@ -23,6 +23,9 @@ exec_always feh --bg-scale ~/dotfiles/backgrounds/orange-single-one-colour-solid
 
 exec xrandr --output DP-2 --mode 1920x1080 --rate 144 --output DP-0 --mode 1920x1080 --rate 144
 
+# Disalbe mouse-acceleration
+# xinput set-prop 10 "libinput Accel Profile Enabled" 0 1 0
+
 # Show rofi all menu
 bindsym $mod+space exec rofi -show combi
 
