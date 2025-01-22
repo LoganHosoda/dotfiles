@@ -30,7 +30,7 @@ exec xrandr --output DP-2 --mode 1920x1080 --rate 144 --output DP-0 --mode 1920x
 bindsym $mod+space exec rofi -show combi
 
 # start terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec ghostty
 
 # start google chrome
 bindsym $mod+g exec google-chrome-stable
