@@ -23,7 +23,7 @@ exec_always feh --bg-scale ~/dotfiles/backgrounds/orange-single-one-colour-solid
 
 exec xrandr --output DP-2 --mode 1920x1080 --rate 144 --output DP-0 --mode 1920x1080 --rate 280 --output HDMI-1 --mode 1920x1080 --rate 144
 
-# Disalbe mouse-acceleration
+# Disable mouse-acceleration
 # xinput set-prop 10 "libinput Accel Profile Enabled" 0 1 0
 
 # Show rofi all menu
@@ -203,8 +203,9 @@ client.focused          #61AFEF #61AFEF #61AFEF #61AFEF
 
 # hide_edge_borders both
 
-default_orientation vertical
-popup_during_fullscreen leave_fullscreen
+for_window [tiling] split h
+workspace_layout default
+default_orientation horizontal
 
 # =======================
 
