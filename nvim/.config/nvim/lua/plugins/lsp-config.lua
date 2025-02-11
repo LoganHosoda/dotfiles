@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = { "lua_ls", "ts_ls", "emmet_ls" }
+        ensure_installed = { "lua_ls", "ts_ls", "emmet_ls", "cssls" }
       })
     end
   },
@@ -29,12 +29,19 @@ return {
         capabilities = capabilities,
       })
 
+      -- CSS LS Setup
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+      })
+
       -- Emmet LS Setup with extended filetypes
       lspconfig.emmet_ls.setup({
         capabilities = capabilities,
-        filetypes = { "css", "eruby", "html", "javascript", "javascriptreact",
-                      "less", "sass", "scss", "svelte", "pug",
-                      "typescriptreact", "vue", "handlebars", "html-ejs", "ejs" }, -- Add hbs and ejs
+        filetypes = {
+          "css", "eruby", "html", "javascript", "javascriptreact",
+          "less", "sass", "scss", "svelte", "pug",
+          "typescriptreact", "vue", "handlebars", "html-ejs", "ejs"  -- Add hbs and ejs
+        },
         init_options = {
           html = {
             options = {
@@ -51,4 +58,3 @@ return {
     end
   },
 }
-
