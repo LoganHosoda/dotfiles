@@ -9,12 +9,11 @@ fi
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="half-life"
 plugins=(git fzf)
-[ -d $ZSH ] && source $ZSH/oh-my-zsh.sh
 
 bindkey -s '^f' "tmux-sessionizer\n"
+
+eval "$(starship init zsh)"
 
 # === SCRIPTS PATH ===
 [ -d ~/.local/scripts ] && export PATH="$HOME/.local/scripts:$PATH"
@@ -31,7 +30,6 @@ export PATH=$PATH:$HOME/.local/bin
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -95,7 +93,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
 # source ~/.zsh_profile
 
 # User configuration
@@ -128,5 +125,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/nvm/init-nvm.sh

@@ -7,3 +7,7 @@ keybind = alt+six=unbind
 keybind = alt+seven=unbind
 keybind = alt+eight=unbind
 keybind = alt+nine=unbind
+
+font-family = Hack Nerd Font Mono
+
+background-opacity = 0.95
