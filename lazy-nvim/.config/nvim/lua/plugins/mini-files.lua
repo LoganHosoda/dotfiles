@@ -1,5 +1,5 @@
 return {
-  "exhasnovski/mini.files",
+  "echasnovski/mini.files",
   opts = {
     mappings = {
       close = "q",
