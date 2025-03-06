@@ -10,12 +10,18 @@ keybind = alt+nine=unbind
 
 theme = catppuccin-mocha
 # theme = GruvboxDark
+
 # font-family = Meslo LGS Nerd Font Mono
 # font-family = CaskaydiaMono Nerd Font
 # font-family = CaskaydiaCove Nerd Font
+font-family = Hack Nerd Font Mono
 font-size = 10
+
 background-opacity = 0.95
+
 gtk-titlebar = false
+
 # custom-shader = /home/chris/bloom.glsl
 #custom-shader = /home/chris/crt.glsl
 
+background-opacity = 0.95
