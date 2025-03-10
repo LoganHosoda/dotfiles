@@ -17,8 +17,18 @@ return {
         },
         mappings = {
           n = {
+            -- Replace default <C-x> (horizontal split) with '-'
+            ["-"] = require("telescope.actions").select_horizontal,
+            -- Replace default <C-v> (vertical split) with '\'
+            ["\\"] = require("telescope.actions").select_vertical,
             ["d"] = require("telescope.actions").delete_buffer,
             ["q"] = require("telescope.actions").close,
+          },
+          i = {
+            -- Replace default <C-x> (horizontal split) with '-'
+            ["-"] = require("telescope.actions").select_horizontal,
+            -- Replace default <C-v> (vertical split) with '\'
+            ["\\"] = require("telescope.actions").select_vertical,
           },
         },
       },
@@ -51,6 +61,20 @@ return {
         require("telescope.builtin").find_files(require("telescope.themes").get_ivy())
       end,
       desc = "Find File (CWD)",
+    },
+    {
+      "<leader>sn",
+      function()
+        require("telescope.builtin").find_files(require("telescope.themes").get_ivy({ cwd = "~/notes" }))
+      end,
+      desc = "Find Files (Notes Directory)",
+    },
+    {
+      "<leader>sl",
+      function()
+        require("telescope.builtin").live_grep(require("telescope.themes").get_ivy({ cwd = "~/notes" }))
+      end,
+      desc = "Live Grep (Notes Directory)",
     },
     {
       "<leader>sg",
@@ -122,13 +146,13 @@ return {
       end,
       desc = "Commands",
     },
-    {
-      "<leader>sl",
-      function()
-        require("telescope.builtin").resume(require("telescope.themes").get_ivy())
-      end,
-      desc = "Resume last search",
-    },
+    -- {
+    --   "<leader>sl",
+    --   function()
+    --     require("telescope.builtin").resume(require("telescope.themes").get_ivy())
+    --   end,
+    --   desc = "Resume last search",
+    -- },
     {
       "<leader>sc",
       function()

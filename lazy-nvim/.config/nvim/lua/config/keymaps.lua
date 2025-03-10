@@ -23,6 +23,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<F6>", ":!cd ~/notes && git pull<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-n>", ":!~/notes/find_files.sh &<CR>", { noremap = true, silent = true })
 
 -- Open telescope buffers menu with added customization
 vim.keymap.set(
