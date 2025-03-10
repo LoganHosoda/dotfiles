@@ -27,7 +27,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Open telescope buffers menu with added customization
 vim.keymap.set(
   "n",
-  "<A-b>",
+  "<leader>o",
   "<cmd>Telescope buffers initial_mode=normal theme=ivy<cr>",
   { desc = "[P]Open telescope buffers" }
 )
