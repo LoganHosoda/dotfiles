@@ -25,6 +25,13 @@ return {
             ["q"] = require("telescope.actions").close,
           },
           i = {
+            -- Add custom keybinding for opening in a new buffer
+            ["<S-CR>"] = function(prompt_bufnr)
+              local selection = require("telescope.actions").get_selected_entry()
+              local filepath = selection.path
+              -- Open the selected item in a new buffer
+              vim.cmd("tabnew " .. filepath)
+            end,
             -- Replace default <C-x> (horizontal split) with '-'
             ["-"] = require("telescope.actions").select_horizontal,
             -- Replace default <C-v> (vertical split) with '\'
