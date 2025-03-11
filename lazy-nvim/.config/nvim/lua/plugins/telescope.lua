@@ -26,7 +26,7 @@ return {
           },
           i = {
             -- Add custom keybinding for opening in a new buffer
-            ["<S-CR>"] = function(prompt_bufnr)
+            ["<S-CR>"] = function()
               local selection = require("telescope.actions").get_selected_entry()
               local filepath = selection.path
               -- Open the selected item in a new buffer
@@ -72,14 +72,14 @@ return {
     {
       "<leader>sn",
       function()
-        require("telescope.builtin").find_files(require("telescope.themes").get_ivy({ cwd = "~/notes" }))
+        require("telescope.builtin").find_files(require("telescope.themes").get_ivy({ cwd = "~/vaults/" }))
       end,
       desc = "Find Files (Notes Directory)",
     },
     {
-      "<leader>sl",
+      "<leader>sz",
       function()
-        require("telescope.builtin").live_grep(require("telescope.themes").get_ivy({ cwd = "~/notes" }))
+        require("telescope.builtin").live_grep(require("telescope.themes").get_ivy({ cwd = "~/vaults/" }))
       end,
       desc = "Live Grep (Notes Directory)",
     },

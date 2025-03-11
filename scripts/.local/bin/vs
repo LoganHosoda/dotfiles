@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Directory containing markdown files
+VAULT_DIR="$HOME/vaults"
+SOURCE_DIR="confirmed"
+
+# Iterate through all markdown files in the source directory
+find "$VAULT_DIR/$SOURCE_DIR" -type f -name "*.md" | while read -r file; do
+  echo "Processing $file"
+
+  # Extract tags from the file. This assumes the tags are listed under the "tags:" line in the front matter
+  tags=$(awk '/tags:/{getline; print; exit}' "$file" | sed -e 's/^ *- *//' -e 's/^ *//;s/ *$//')
+
+  # Extract multiple tags by looking for all lines under "tags:" (after the "tags:" line)
+  tags=$(awk '/tags:/{flag=1; next} flag && /^ *-/ {print $2} /---/{flag=0}' "$file")
+
+  # Convert to an array
+  tags_array=($tags)
+
+  # Check if there are at least two tags
+  if [ ${#tags_array[@]} -ge 2 ]; then
+    # First tag is the parent directory
+    first_tag="${tags_array[0]}"
+    # Second tag is the subdirectory
+    second_tag="${tags_array[1]}"
+
+    # Define the base target directory based on the first tag
+    case "$first_tag" in
+    programming)
+      TARGET_DIR="$VAULT_DIR/programming/notes"
+      ;;
+    work)
+      TARGET_DIR="$VAULT_DIR/work/notes"
+      ;;
+    personal)
+      TARGET_DIR="$VAULT_DIR/personal/notes"
+      ;;
+    *)
+      echo "Unknown first tag $first_tag for $file. Skipping."
+      continue
+      ;;
+    esac
+
+    # Create the parent directory if it doesn't exist
+    mkdir -p "$TARGET_DIR"
+
+    # Create the subdirectory for the second tag
+    TARGET_DIR="$TARGET_DIR/$second_tag"
+    mkdir -p "$TARGET_DIR"
+
+    # Move the file to the appropriate directory
+    mv "$file" "$TARGET_DIR/"
+    echo "Moved $file to $TARGET_DIR"
+  else
+    echo "Not enough tags found for $file. Skipping."
+  fi
+done
+
+echo "Done 🪷"

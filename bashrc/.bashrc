@@ -22,6 +22,12 @@ alias gitm='git add -u && git commit -m "Update $(date +%F)" && git push'
 # Use gitq to add, update, and push ALL files, including new files
 alias gitq='git add . && git commit -m "Update $(date +%F)" && git push'
 
+# Obsidian mappings
+alias vo='cd ~/vaults'
+alias vr='nvim ~/vaults/inbox/*.md'
+alias vn='~/.local/bin/vn'
+alias vs='~/.local/bin/vs'
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
