@@ -44,6 +44,13 @@ vim.keymap.set(
   { desc = "Live Grep (Vaults Directory)" }
 )
 
+-- vim.keymap.set(
+--   "n",
+--   "<leader>",
+--   '<cmd>Telescope live_grep search_dirs={"~/vaults"} theme=ivy<cr>',
+--   { desc = "Live Grep (Vaults Directory)" }
+-- )
+
 ----------------------------------------
 --- OBSIDIAN VAULT WORKFLOW COMMANDS ---
 ----------------------------------------

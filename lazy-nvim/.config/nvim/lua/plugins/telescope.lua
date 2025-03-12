@@ -1,6 +1,16 @@
 return {
   "nvim-telescope/telescope.nvim",
   opts = function()
+    local actions = require("telescope.actions")
+    local builtin = require("telescope.builtin")
+
+    -- Define the custom function
+    local function open_and_resume(prompt_bufnr)
+      actions.select_default(prompt_bufnr)
+      builtin.resume()
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+    end
+
     return {
       defaults = {
         require("telescope").setup({
@@ -23,19 +33,14 @@ return {
             ["\\"] = require("telescope.actions").select_vertical,
             ["d"] = require("telescope.actions").delete_buffer,
             ["q"] = require("telescope.actions").close,
+            ["<S-CR>"] = open_and_resume,
           },
           i = {
-            -- Add custom keybinding for opening in a new buffer
-            ["<S-CR>"] = function()
-              local selection = require("telescope.actions").get_selected_entry()
-              local filepath = selection.path
-              -- Open the selected item in a new buffer
-              vim.cmd("tabnew " .. filepath)
-            end,
             -- Replace default <C-x> (horizontal split) with '-'
             ["-"] = require("telescope.actions").select_horizontal,
             -- Replace default <C-v> (vertical split) with '\'
             ["\\"] = require("telescope.actions").select_vertical,
+            ["<S-CR>"] = open_and_resume,
           },
         },
       },
