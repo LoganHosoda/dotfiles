@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# --- Command to create new note in Obsidian vault in the inbox folder --- #
+
+cd ~/vaults/ && git pull
+
 if [ -z "$1" ]; then
   echo "Error: A file name must be set, e.g. on \"the wonderful thing about tiggers\"."
   exit 1

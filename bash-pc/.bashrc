@@ -5,8 +5,6 @@
 eval "$(starship init bash)"
 
 bind -x '"\C-f": "~/.local/bin/tmux-sessionizer"'
-bind -x '"\C-n": "~/notes/find_files.sh"'
-bind -x '"\C-g": "~/notes/live_grep.sh"'
 
 # Alias Nvim and Tmux shortcuts
 alias n=nvim
@@ -14,8 +12,8 @@ alias t=tmux
 
 # Git shortcuts
 alias gits='git status'
-alias gita='git add -u'
-alias gitp='git push'
+alias gita='git add .'
+alias gitp='git pull'
 alias gitu='git commit -m "Update $(date +%F)"'
 # Use gitm to add, update, and push any modified files. Excludes any new files
 alias gitm='git add -u && git commit -m "Update $(date +%F)" && git push'
@@ -27,6 +25,7 @@ alias vo='cd ~/vaults'
 alias vr='nvim ~/vaults/inbox/*.md'
 alias vn='~/.local/bin/vn'
 alias vs='~/.local/bin/vs'
+alias vu='~/.local/bin/vu'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

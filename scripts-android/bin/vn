@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ~/vaults/ && git pull
+
 if [ -z "$1" ]; then
   echo "Error: A file name must be set, e.g. on \"the wonderful thing about tiggers\"."
   exit 1

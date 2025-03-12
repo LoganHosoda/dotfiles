@@ -77,6 +77,7 @@ vim.keymap.set("n", "<leader>vcdn", ":!rm '%:p'<cr>:bd<cr>", { desc = "Confirm D
 
 -- Create a new note, prompt for filename, and open in vertical split
 function RunVNCommand()
+  -- vim.cmd("!cd ~/vaults && git pull")
   -- Prompt for user input (the file name)
   vim.ui.input({ prompt = "Enter file name (e.g. 'javascript array map method'): " }, function(input)
     if input then
