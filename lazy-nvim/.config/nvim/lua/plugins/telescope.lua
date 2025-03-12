@@ -33,14 +33,14 @@ return {
             ["\\"] = require("telescope.actions").select_vertical,
             ["d"] = require("telescope.actions").delete_buffer,
             ["q"] = require("telescope.actions").close,
-            ["<S-CR>"] = open_and_resume,
+            ["<S-o>"] = open_and_resume,
           },
           i = {
             -- Replace default <C-x> (horizontal split) with '-'
             ["-"] = require("telescope.actions").select_horizontal,
             -- Replace default <C-v> (vertical split) with '\'
             ["\\"] = require("telescope.actions").select_vertical,
-            ["<S-CR>"] = open_and_resume,
+            ["<S-o>"] = open_and_resume,
           },
         },
       },
