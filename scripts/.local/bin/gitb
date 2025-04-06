@@ -5,7 +5,7 @@ set -euo pipefail
 if [[ $# -eq 1 ]]; then
   selected=$1
 else
-  selected=$(git diff --name-only | fzf)
+  selected=$(git ls-files --modified --others --exclude-standard | fzf)
 fi
 
 if [[ -z $selected ]]; then
