@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ~/vaults/ && git pull && git add . && git commit -m 'Updated $(date "+%Y-%m-%d")' && git push
+notify-send 'Pulled/pushed ~/vaults updates!!'
+echo "Updated the ~/vaults/ directory! 🪷"
+
+cd ~/projects/hanson/ && git pull && git add . && git commit -m 'Updated $(date "+%Y-%m-%d")' && git push
+notify-send 'Pulled/pushed ~/projects/hanson/ updates!!'
+echo "Updated the ~/projects/hanson directory! 🪷"

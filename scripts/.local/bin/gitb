@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ $# -eq 1 ]]; then
+  selected=$1
+else
+  selected=$(git diff --name-only | fzf)
+fi
+
+if [[ -z $selected ]]; then
+  exit 0
+fi
+
+git add "$selected"
+
+git status
+
+read -p "Enter a date for you commit (YYYY-MM-DD format): " date
+read -p "Enter a commit message: " message
+
+git commit --date "'${date}'" -m "'${message}'" && git rebase --committer-date-is-author-date && git push
