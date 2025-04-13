@@ -6,6 +6,13 @@
 
 config_version: 2
 settings:
+  bindings.commands:
+    global:
+      normal:
+        H: tab-prev
+        J: back
+        K: forward
+        L: tab-next
   content.javascript.clipboard:
     https://design.penpot.app: access-paste
   content.register_protocol_handler:
