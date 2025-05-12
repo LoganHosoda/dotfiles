@@ -1,0 +1,37 @@
+{
+  "EJS Expression": {
+    "prefix": "ejsexpr",
+    "body": ["<%= $1 %>"],
+    "description": "EJS Expression"
+  },
+  "EJS Tag": {
+    "prefix": "ejstag",
+    "body": ["<% $1 %>"],
+    "description": "EJS Tag"
+  },
+  "EJS Loop": {
+    "prefix": "ejsfor",
+    "body": [
+      "<% for (let ${1:item} of ${2:items}) { %>",
+      "  ${3:<div><%= $1 %></div>}",
+      "<% } %>"
+    ],
+    "description": "EJS for loop"
+  },
+  "EJS Include": {
+    "prefix": "ejsinclude",
+    "body": ["<%- include('${1:partials/header}') %>"],
+    "description": "EJS include partial"
+  },
+  "EJS If Else": {
+    "prefix": "ejsif",
+    "body": [
+      "<% if (${1:condition}) { %>",
+      "  ${2:// code here}",
+      "<% } else { %>",
+      "  ${3:// else block}",
+      "<% } %>"
+    ],
+    "description": "EJS if-else block"
+  }
+}

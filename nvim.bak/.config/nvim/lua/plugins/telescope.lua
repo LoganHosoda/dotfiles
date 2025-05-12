@@ -11,7 +11,7 @@ return {
       require('telescope').setup{
         defaults = {
           vimgrep_arguments = {
-            '--hidden',
+            '-hidden',
             '-uu' -- **This is the added flag**
           },
           file_ignore_patterns = {
