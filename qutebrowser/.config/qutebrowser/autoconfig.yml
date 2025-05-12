@@ -16,6 +16,7 @@ settings:
   content.javascript.clipboard:
     https://design.penpot.app: access-paste
     https://developer.paypal.com: access-paste
+    https://drive.google.com: access-paste
     https://github.com: access-paste
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
