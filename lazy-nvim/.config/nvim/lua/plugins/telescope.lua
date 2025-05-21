@@ -4,6 +4,11 @@ return {
     local actions = require("telescope.actions")
     local builtin = require("telescope.builtin")
 
+    -- Basic keymappings for telescope
+    -- vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Telescope find files" })
+    -- vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Telescope find files" })
+    -- vim.keymap.set("n", "<leader>ps", builtin.live_grep, { desc = "Telescope live grep" })
+
     -- Define the custom function
     local function open_and_resume(prompt_bufnr)
       actions.select_default(prompt_bufnr)
@@ -14,8 +19,15 @@ return {
     return {
       defaults = {
         require("telescope").setup({
+          defaults = {
+            file_ignore_patterns = {
+              "node_modules",
+              ".git",
+            },
+          },
           pickers = {
             find_files = {
+              hidden = true,
               find_command = { "rg", "--files", "--sortr=modified" },
             },
           },
@@ -68,42 +80,42 @@ return {
     --   desc = "Find Files (Root)",
     -- },
     {
-      "<leader>f",
+      "<leader>pf",
       function()
-        require("telescope.builtin").find_files(require("telescope.themes").get_ivy())
+        require("telescope.builtin").find_files(require("telescope.themes"))
       end,
       desc = "Find File (CWD)",
     },
     {
-      "<leader>sn",
+      "<leader>pn",
       function()
         require("telescope.builtin").find_files(require("telescope.themes").get_ivy({ cwd = "~/vaults/" }))
       end,
       desc = "Find Files (Notes Directory)",
     },
     {
-      "<leader>sz",
+      "<leader>pz",
       function()
         require("telescope.builtin").live_grep(require("telescope.themes").get_ivy({ cwd = "~/vaults/" }))
       end,
       desc = "Live Grep (Notes Directory)",
     },
     {
-      "<leader>sg",
+      "<leader>pg",
       function()
         require("telescope.builtin").git_files(require("telescope.themes").get_ivy())
       end,
       desc = "Search Git Files",
     },
     {
-      "<leader>sh",
+      "<leader>ph",
       function()
         require("telescope.builtin").help_tags(require("telescope.themes").get_ivy())
       end,
       desc = "Find Help",
     },
     {
-      "<leader>sH",
+      "<leader>pH",
       function()
         require("telescope.builtin").highlights(require("telescope.themes").get_ivy())
       end,
