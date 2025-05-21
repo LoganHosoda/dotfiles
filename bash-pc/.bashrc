@@ -6,9 +6,14 @@ eval "$(starship init bash)"
 
 bind -x '"\C-f": "~/.local/bin/tmux-sessionizer"'
 
+# Misc aliases
+alias la='ls -la'
+alias tg='tree --gitignore'
+
 # Alias Nvim and Tmux shortcuts
 alias n=nvim
 alias t=tmux
+alias h=helix
 
 # Git shortcuts
 alias gits='git status'

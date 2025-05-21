@@ -1,0 +1,7 @@
+theme = "material_palenight"
+
+[keys.normal]
+C-h = "Jump to left split"
+C-j = "Jump to split below"
+C-k = "Jump to split above"
+C-l = "Jump to right split"
