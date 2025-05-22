@@ -1,7 +1,17 @@
-theme = "material_palenight"
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = 'relative'
+bufferline = 'multiple'
 
 [keys.normal]
-C-h = "Jump to left split"
-C-j = "Jump to split below"
-C-k = "Jump to split above"
-C-l = "Jump to right split"
+"C-d" = ["page_down", "align_view_center"]
+"C-u" = ["page_up", "align_view_center"]
+
+"C-h" = ["jump_view_left"]
+"C-j" = ["jump_view_down"]
+"C-k" = ["jump_view_up"]
+"C-l" = ["jump_view_right"]
+
+"H" = [":buffer-previous"]
+"L" = [":buffer-next"]

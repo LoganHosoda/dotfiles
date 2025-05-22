@@ -1,0 +1,5 @@
+[themes.catppuccin_macchiato]
+fg = "blue"
+modifiers = ["slow_blink"]
+
+# Hello World!
