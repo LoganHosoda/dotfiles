@@ -4,6 +4,8 @@
 
 eval "$(starship init bash)"
 
+# export BROWSER='/usr/bin/firefox'
+
 bind -x '"\C-f": "~/.local/bin/tmux-sessionizer"'
 
 # Misc aliases
@@ -40,3 +42,4 @@ alias vu='~/.local/bin/vu'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
+export PATH=~/.npm-global/bin:$PATH
