@@ -4,7 +4,8 @@
 
 eval "$(starship init bash)"
 
-# export BROWSER='/usr/bin/firefox'
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 bind -x '"\C-f": "~/.local/bin/tmux-sessionizer"'
 
