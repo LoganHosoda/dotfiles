@@ -31,7 +31,7 @@ set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 # Steam Deck internal display
 # output X11-1 mode 1280x800 scale 1 background ./wallpaper.jpg fill position 0,0
-output X11-1 mode 1920x1080 scale 1 background ./wallpaper.jpg fill position 0,0
+output X11-1 mode 1280x800 scale 1 background ./wallpaper.jpg fill position 0,0
 
 # External monitor configuration (280hz 1920x1080)
 # Position it to the right of the Steam Deck display
