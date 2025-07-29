@@ -1,3 +1,4 @@
+vim.cmd.colorscheme("retrobox")
 vim.o.undofile = true
 vim.o.clipboard = "unnamedplus"
 vim.o.laststatus = 0
@@ -10,7 +11,6 @@ vim.o.sidescrolloff = 8              -- Keep 8 columns visible when scrolling
 vim.o.number = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.cmd.colorscheme("green")
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
