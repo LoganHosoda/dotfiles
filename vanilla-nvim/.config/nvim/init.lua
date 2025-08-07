@@ -5,6 +5,7 @@ vim.cmd [[
   highlight Normal ctermbg=none
   highlight NonText ctermbg=none
 ]]
+vim.o.winbar = "%{expand('%:.')}"
 vim.opt.guicursor = "n-v-c-i:block"
 vim.o.cursorcolumn = false
 vim.o.undofile = true
