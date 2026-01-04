@@ -1,0 +1,54 @@
+# JavaScript/TypeScript/React
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server"]
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server"]
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server"]
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server"]
+
+# HTML
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server"]
+
+# CSS
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server"]
+
+# EJS (using HTML LSP)
+[[language]]
+name = "ejs"
+language-servers = ["vscode-html-language-server"]
+file-types = ["ejs"]
+
+# LSP server configurations
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+config = { preferences = { includePackageJsonAutoImports = "auto" }, plugins = [{ name = "@typescript-eslint/eslint-plugin", location = "local" }] }
+
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-css-language-server]
+command = "vscode-css-language-server"
+args = ["--stdio"][[language]]
+name = "javascript"
+language-servers = ["typescript-language-server"]
+
+[language-server.typescript-language-server.config.typescript]
+preferences = { includePackageJsonAutoImports = "auto" }
+
+[language-server.typescript-language-server.config.javascript]
+preferences = { includePackageJsonAutoImports = "auto" }

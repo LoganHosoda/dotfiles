@@ -16,6 +16,7 @@ settings:
   content.javascript.clipboard:
     https://chatgpt.com: access-paste
     https://claude.ai: access-paste
+    https://code.claude.com: access-paste
     https://console.cloudinary.com: access-paste
     https://design.penpot.app: access-paste
     https://developer.paypal.com: access-paste
