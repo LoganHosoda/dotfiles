@@ -4,11 +4,21 @@
 
 eval "$(starship init bash)"
 
+set -o vi
+xdg-settings set default-web-browser zen-browser.desktop
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 bind -x '"\C-f": "~/.local/bin/tmux-sessionizer"'
 
 # Misc aliases
 alias la='ls -la'
 alias tg='tree --gitignore'
+
+# Alias Cheatsheets
+alias ct='cat ~/terminal-cheatsheet.md'
+alias cv='cat ~/vim-cheatsheet.md'
 
 # Alias Nvim and Tmux shortcuts
 alias n=nvim
@@ -40,4 +50,8 @@ alias vu='~/.local/bin/vu'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
+<<<<<<< HEAD
 export PATH="$HOME/.local/bin:$PATH"
+=======
+export PATH=~/.npm-global/bin:$PATH
+>>>>>>> a66d2a8155f6d51ba6d655e34cdcbd489aaa0782
