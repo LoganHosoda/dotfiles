@@ -1,0 +1,16 @@
+{
+  "plugins": {
+    "mason.nvim": {
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "0b38bc74487e73489624d61396af7805af9cc75f",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "de878155ca66c49b027b1380e4e60a6c665b2630",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    }
+  }
+}

@@ -51,7 +51,7 @@ vim.pack.add {
 vim.lsp.enable({ "lua_ls", "svelte", "ts_ls" })
 require "mason".setup()
 
-require 'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter'.setup {
   ensure_installed = { "svelte", "typescript", "javascript", "html", "css" },
   auto_install = true,
   highlight = {
