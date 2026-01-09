@@ -9,10 +9,12 @@ vim.pack.add {
   { src = 'https://github.com/christoomey/vim-tmux-navigator' },
   { src = 'https://github.com/kylechui/nvim-surround' },
   { src = 'https://github.com/abecodes/tabout.nvim' },
+  { src = 'https://github.com/saghen/blink.cmp' },
+  { src = 'https://github.com/L3MON4D3/LuaSnip' },
+  { src = 'https://github.com/rafamadriz/friendly-snippets' },
 }
 
 -- Iniitalize Plugins
-
 require('autoclose').setup({
   options = {
     pair_spaces = true
@@ -20,7 +22,11 @@ require('autoclose').setup({
 })
 require("nvim-surround").setup()
 require("tabout").setup()
-
+require("luasnip.loaders.from_vscode").lazy_load()
+require("blink.cmp").setup({
+  signature = { enabled = true },
+  fuzzy = { implementation = "prefer_rust" },
+})
 -- LSP Config
 require("mason").setup()
 require("mason-lspconfig").setup({
