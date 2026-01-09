@@ -1,10 +1,61 @@
-vim.cmd.colorscheme("retrobox")
-vim.cmd [[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
-]]
+-- Plugins
+vim.pack.add {
+  { src = 'https://github.com/neovim/nvim-lspconfig' },
+  { src = 'https://github.com/mason-org/mason.nvim' },
+  { src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+  { src = 'https://github.com/m4xshen/autoclose.nvim' },
+  { src = 'https://github.com/catppuccin/nvim' },
+  { src = 'https://github.com/christoomey/vim-tmux-navigator' },
+  { src = 'https://github.com/kylechui/nvim-surround' },
+  { src = 'https://github.com/abecodes/tabout.nvim' },
+}
+
+-- Iniitalize Plugins
+
+require('autoclose').setup({
+  options = {
+    pair_spaces = true
+  }
+})
+require("nvim-surround").setup()
+require("tabout").setup()
+
+-- LSP Config
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = { "lua_ls", "ts_ls", "svelte", "html", "cssls", "emmet_ls" }
+})
+
+vim.lsp.enable("lua_ls", "ts_ls", "svelte", "html", "cssls", "emmet_ls")
+vim.diagnostic.config({
+  -- virtual_lines = true
+  virtual_lines = {
+    current_line = true
+  }
+})
+
+require 'nvim-treesitter'.setup({
+  opts = {
+    ensure_installed = { "svelte", "typescript", "javascript", "html", "css" },
+    auto_install = true,
+    highlight = {
+      enable = true,
+    },
+  },
+})
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.svelte"},
+  callback = function()
+    vim.treesitter.start()
+  end
+})
+
+-- Color Scheme
+vim.cmd.colorscheme "catppuccin"
+
+-- Vim Settings
 vim.o.winbar = "%{expand('%:.')}"
 vim.opt.guicursor = "n-v-c-i:block"
 vim.o.cursorcolumn = false
@@ -20,13 +71,20 @@ vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 vim.o.number = true
 vim.opt.autoindent = true
-vim.o.signcolumn = 'yes'
+-- vim.opt.smartindent = true
+vim.o.signcolumn = 'yes:1'
 vim.o.winborder = "rounded"
+
+-- Keymaps
+vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
+vim.keymap.set('n', '<leader>ve', '<cmd>edit ~/.config/nvim/init.lua<CR>')
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
+vim.keymap.set('n', '<S-h>', '<cmd>bp<CR>')
+vim.keymap.set('n', '<S-l>', '<cmd>bn<CR>')
 vim.keymap.set('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 vim.keymap.set("n", "<space>c", function()
   vim.ui.input({}, function(c)
@@ -40,28 +98,7 @@ vim.keymap.set("n", "<space>c", function()
 end)
 vim.cmd('autocmd BufNewFile,BufRead *.ejs set filetype=html')
 
--- Plugins
-vim.pack.add {
-  { src = 'https://github.com/neovim/nvim-lspconfig' },
-  { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
-  { src = 'https://github.com/mason-org/mason.nvim' },
-}
-
--- LSP Config
-vim.lsp.enable({ "lua_ls", "svelte", "ts_ls" })
-require "mason".setup()
-
-require 'nvim-treesitter'.setup {
-  ensure_installed = { "svelte", "typescript", "javascript", "html", "css" },
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-}
-
 -- LSP Keymaps
-vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
