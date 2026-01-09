@@ -55,3 +55,4 @@ export PATH="$HOME/.local/bin:$PATH"
 =======
 export PATH=~/.npm-global/bin:$PATH
 >>>>>>> a66d2a8155f6d51ba6d655e34cdcbd489aaa0782
+. "$HOME/.cargo/env"

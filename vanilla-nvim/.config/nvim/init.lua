@@ -33,7 +33,7 @@ require("mason-lspconfig").setup({
   ensure_installed = { "lua_ls", "ts_ls", "svelte", "html", "cssls", "emmet_ls" }
 })
 
-vim.lsp.enable("lua_ls", "ts_ls", "svelte", "html", "cssls", "emmet_ls")
+vim.lsp.enable("lua_ls", "ts_ls", "svelte", "html", "cssls", "emmet_ls", "tailwindcss")
 vim.diagnostic.config({
   -- virtual_lines = true
   virtual_lines = {
