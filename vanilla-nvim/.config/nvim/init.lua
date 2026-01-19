@@ -85,6 +85,7 @@ vim.o.winborder = "rounded"
 vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>ve', '<cmd>edit ~/.config/nvim/init.lua<CR>')
+vim.keymap.set('n', '<leader>pv', '<cmd>Explore<CR>')
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')

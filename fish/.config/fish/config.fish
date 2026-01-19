@@ -12,7 +12,7 @@ if status is-interactive
 
 end
 
-bind ctrl-f 'bash ~/.local/bin/tmux-sessionizer'
+# bind ctrl-f 'bash ~/.local/bin/tmux-sessionizer'
 
 starship init fish | source
 
@@ -46,4 +46,5 @@ alias q 'qs -c ii'
 #   set_color green; echo '> '
 # end
 
+set -gx BROWSER qutebrowser
 fish_add_path ~/.npm-global/bin
