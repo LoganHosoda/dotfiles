@@ -12,7 +12,7 @@ if status is-interactive
 
 end
 
-bind ctrl-f 'bash ~/.local/bin/tmux-sessionizer'
+bind \ecf 'bash ~/.local/bin/tmux-sessionizer'
 
 starship init fish | source
 
@@ -47,3 +47,5 @@ alias q 'qs -c ii'
 # end
 
 fish_add_path ~/.npm-global/bin
+fish_add_path ~/.config/emacs/bin/ 
+fish_add_path ~/.local/share/nvm/v25.2.1/bin
