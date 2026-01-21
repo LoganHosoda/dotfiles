@@ -1,7 +1,7 @@
 include current-theme.conf
 
 # Font
-font_family     Hurmit Nerd Font
+font_family      JetBrains Mono Nerd Font
 font_size 11.0
 
 # Cursor

@@ -1,0 +1,33 @@
+(defsrc
+  caps
+  q w e r
+  a s d f
+  c
+  y u i o p
+  h j k l
+  n m ,
+)
+
+(deflayer base
+  @ext
+  q w e r
+  a s d f
+  c
+  y u i o p
+  h j k l
+  n m ,
+)
+
+(deflayer extend
+  _
+  pgdn del pgup `
+  home del end -
+  S--
+  [ ] S-[ S-] S-.
+  left down up right
+  = S-` /
+)
+
+(defalias
+  ext (layer-toggle extend)
+)

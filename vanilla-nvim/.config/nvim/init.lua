@@ -114,3 +114,39 @@ vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>ld', vim.diagnostic.open_float)
+
+-- Quick-use Terminal
+local term_buf = nil
+local term_win = nil
+
+local function toggle_terminal()
+  -- If window exists and is valid, close it
+  if term_win and vim.api.nvim_win_is_valid(term_win) then
+    vim.api.nvim_win_hide(term_win)
+    term_win = nil
+    return
+  end
+
+  -- If buffer doesn't exist or isn't valid, create new terminal
+  if not term_buf or not vim.api.nvim_buf_is_valid(term_buf) then
+    term_buf = vim.api.nvim_create_buf(false, true)
+    vim.api.nvim_buf_call(term_buf, function()
+      vim.fn.termopen(vim.o.shell)
+    end)
+  end
+
+  -- Create the split window
+  vim.cmd('botright split')
+  term_win = vim.api.nvim_get_current_win()
+  vim.api.nvim_win_set_buf(term_win, term_buf)
+  vim.api.nvim_win_set_height(term_win, 12)
+
+  -- Enter insert mode in terminal
+  vim.cmd('startinsert')
+end
+
+-- Keybinding to toggle terminal
+vim.keymap.set({'n', 't'}, '<C-\\>', toggle_terminal, { desc = 'Toggle terminal drawer' })
+
+-- Optional: escape terminal mode with ESC
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
