@@ -30,12 +30,12 @@ exec xrandr --output DP-2 --mode 1920x1080 --rate 144 --output DP-0 --mode 1920x
 bindsym $mod+space exec rofi -show combi
 
 # start terminal
-bindsym $mod+Return exec ghostty
+bindsym $mod+Return exec kitty
 
 # start google chrome
 bindsym $mod+g exec google-chrome-stable
 
-bindsym $mod+d exec dmenu
+bindsym $mod+d exec wmenu
 # ==============================
 
 set $up k
@@ -209,7 +209,6 @@ default_orientation horizontal
 
 # =======================
 
-exec_always "$HOME/Dotfiles/startup.sh &"
+# exec_always "$HOME/Dotfiles/startup.sh &"
 
 # =======================
-
