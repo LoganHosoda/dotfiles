@@ -65,12 +65,23 @@ exec swayidle -w \
 #
 # Example configuration:
 
-input "1267:12643:ELAN260A:00_04F3:3163_Touchpad" {
-    dwt enabled
-        tap enabled
-        natural_scroll enabled
-        middle_emulation enabled
+# input "1267:12643:ELAN260A:00_04F3:3163_Touchpad" {
+#     dwt enabled
+#         tap enabled
+#         natural_scroll enabled
+#         middle_emulation enabled
+# }
+
+### Disable mouse acceleration
+input "4152:6198:SteelSeries_SteelSeries_Aerox_3" {
+  accel_profile "flat"
+  pointer_accel 0.0
 }
+
+input "type:keyboard" {
+    repeat_rate 45
+    repeat_delay 190
+  }
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -234,9 +245,10 @@ client.placeholder      #282a36 #0c0c0c #ffffff #000000   #282a36
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command swaybar
-        position top
+bar {bar {
+  position top
+  status_command i3status
+  font pango:Hurmit Nerd Font
 }
 
 bindsym $mod+g gaps inner all plus 10
