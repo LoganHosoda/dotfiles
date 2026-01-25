@@ -34,6 +34,13 @@ require("catppuccin").setup({
   transparent_background = true;
 })
 
+require("fzf-lua").setup({
+  vim.api.nvim_set_keymap('n', '<leader>f', ':FzfLua files<CR>', { noremap = true, silent = true }),
+  vim.api.nvim_set_keymap('n', '<leader>/', ':FzfLua live_grep<CR>', { noremap = true, silent = true }),
+  vim.api.nvim_set_keymap('n', '<leader>b', ':FzfLua buffers<CR>', { noremap = true, silent = true }),
+  vim.api.nvim_set_keymap('n', '<leader>h', ':FzfLua help_tags<CR>', { noremap = true, silent = true }),
+})
+
 -- LSP Config
 require("mason").setup()
 require("mason-lspconfig").setup({
