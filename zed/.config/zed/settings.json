@@ -35,7 +35,6 @@
       "border.variant": "#15141C",
       "title_bar.background": "#15141C",
       "panel.background": "#15141C",
-      "panel.focused_border": "#15141C",
       "players": [
         {
           "cursor": "bd9dff",
@@ -58,7 +57,7 @@
     "show_user_menu": false,
   },
   "tab_bar": {
-    "show": true,
+    "show": false,
   },
   "toolbar": {
     "quick_actions": false,
